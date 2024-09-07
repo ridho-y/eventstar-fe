@@ -44,10 +44,18 @@ This command will analyze your code and provide feedback on any syntax or style 
 
 ## Step 3: Set up .env file
 
-Navigate into the frontend folder from root and create a `.env` file. In the `.env` file paste the keys specified on Teams.
+Navigate into the frontend folder from root and create a `.env` file. In the `.env` file paste the following with your specific API keys:
 ```shell
-cd frontend
+REACT_APP_BUCKET_NAME="REDACTED"
+REACT_APP_BUCKET_REGION="REDACTED"
+REACT_APP_BUCKET_IMAGE_ACCESS_URL="REDACTED"
+REACT_APP_BUCKET_ENDPOINT="REDACTED"
+REACT_APP_BUCKET_ACCESS_KEY_ID="REDACTED"
+REACT_APP_BUCKET_SECRET_ACCESS_KEY="REDACTED"
+REACT_APP_GOOGLE_PLACE_API_KEY="REDACTED"
+REACT_APP_BACKEND_URL="REDACTED"
 ```
+
 
 ## Step 3: Start the Development Server
 
