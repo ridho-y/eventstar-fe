@@ -3,7 +3,6 @@ import { url } from './config';
 import { toast } from 'react-toastify';
 
 const API_PATH = `${url}`
-console.log(API_PATH)
 export interface ApiResponse {
   ok: boolean;
   error?: string; // ? means optional
