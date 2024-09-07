@@ -53,6 +53,7 @@ export const uploadFiles = async (fileList: UploadFile2[]) => {
   const newlyUploadedFiles: string[] = [];
 
   const s3 = new S3({
+    s3ForcePathStyle: true,
     region: process.env.REACT_APP_BUCKET_REGION,
     endpoint: process.env.REACT_APP_BUCKET_ENDPOINT,
     credentials: {
@@ -75,16 +76,17 @@ export const uploadFiles = async (fileList: UploadFile2[]) => {
 
     return new Promise<string>((resolve, reject) => {
       s3.upload({
-        Bucket: 'eventstar-fe',
+        Bucket: process.env.REACT_APP_BUCKET_NAME,
         Key: generateUniqueFileName(compressedFile.name),
         Body: compressedFile,
+        ContentType: compressedFile.type,
       }, (err, data) => {
         if (err) {
           console.error('Upload Error:', err);
           reject(err);
         } else {
-          console.log('Upload Success:', data.Location);
-          resolve(data.Location);
+          console.log('Upload Success');
+          resolve(process.env.REACT_APP_BUCKET_IMAGE_ACCESS_URL + '/' + data.Bucket + '/' + data.Key);
         }
       });
     });
