@@ -1,0 +1,294 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdSn3-K.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSfSnn-K.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmScMnn-K.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdSnn-K.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdgnn-K.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSeMmX-K.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSe1mX-K.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSfSmX-K.ttf) format('truetype');
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.Toastify__toast-body {
+  font-family: 'Poppins' !important;
+}
+
+body {
+  font-family: 'Poppins', "Noto Sans Arabic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  background-color: #f5f5f5;
+}
+
+.content {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* width: 100vw; */
+  /* min-height: calc(100vh - 64px); */
+  height: calc(100vh - 64px);
+}
+
+.line-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.line-animation::after {
+  content: "";
+  position: absolute;
+  margin-bottom: -2px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--col);
+
+  transition: transform 0.35s ease-out;
+
+  /* ending transition */
+  transform-origin: bottom right; 
+  transform: scaleX(0);
+}
+
+.line-animation:hover::after {
+  color: var(--col);
+
+  /* starting transition */
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+@keyframes expandToLeft {
+  from {
+    transform: translateX(300px)
+  }
+
+  to {
+    transform: translateX(0)
+  }
+}
+
+.slide-in {
+  animation: expandToLeft 0.25s ease-in-out;
+}
+
+.ant-input:focus, .ant-input:hover {
+  border-color: theme('colors.secondary-dark');
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 2px rgba(87,168,233, .2);
+  box-shadow: 0 0 0 2px rgba(87,168,233, .2);
+}
+
+.ant-btn-primary {
+  background-color: theme('colors.secondary'); 
+}
+
+.ant-btn-primary:hover {
+  background-color: theme('colors.secondary-dark') !important; 
+}
+
+.ant-form-item-explain-error {
+  font-size: theme('fontSize.h5-md');
+}
+
+.ant-btn-dangerous:hover {
+  background-color: theme('colors.red.500') !important;
+  color: white !important;
+}
+
+@media (max-width: theme('screens.md')) {
+  .ant-form-item-explain-error {
+    font-size: theme('fontSize.h5') !important;
+  }
+}
+
+.swiper {
+  width: 80%;
+  border-radius: 10px;
+  aspect-ratio: 30 / 11;
+}
+
+@media (max-width: theme('screens.md')) {
+  .swiper {
+    width: 90%;
+    aspect-ratio: 30 / 11;
+  }
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.swiper-slide {
+  /* display: block; */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  color: theme('colors.secondary-dark') !important;
+}
+
+.swiper-pagination-bullet-active, .swiper-pagination-bullet {
+  background-color: theme('colors.secondary-dark') !important;
+}
+
+
+.ant-radio-button, .ant-radio-button-checked {
+  border-color: theme('colors.secondary') !important;
+  background-color: theme('colors.secondary') !important;
+}
+
+.container {
+  text-align: center;
+  overflow: hidden;
+  background-color: none;
+  width: 100%;
+  height: 100%;
+  display: flex
+}
+
+.hide-scroll {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scroll::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  filter: blur(100px);
+  /* transform: scale(0.99); */
+  overflow: hidden;
+}
+
+.pic {
+  height: 100%;
+  position: relative;
+  justify-content: center;
+}
+
+.ant-tag {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.ant-picker-input > input, .ant-picker-datetime-panel, .ant-select-selector {
+  font-size: theme('fontSize.h4-md');
+}
+
+@media (max-width: theme('screens.md')) {
+  .ant-tag {
+    font-size: 12px;
+    font-weight: 300;
+  }
+
+  .ant-picker-input > input, .ant-picker-datetime-panel, .ant-select-selector {
+    font-size: theme('fontSize.h4') !important;
+  }
+
+  .ant-picker-range-wrapper {
+    transform: scale(0.8);
+    transform-origin: top left;
+  }
+
+}
+
+.venue-section {
+  pointer-events: all;
+}
+
+
+
+.pac-container:after {
+  /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
+
+  background-image: none !important;
+  height: 0px;
+}
+/* .css-952c85 {
+  border-radius: 5px;
+} */
+
+.expired-bg {
+  background-image: url('assets/expired.svg');
+  text-shadow: 0px 0px 3px #fff;
+  font-family: 'Poppins'
+}
+
+.cancelled-bg {
+  background-image: url('assets/cancelled.svg');
+  text-shadow: 0px 0px 3px #fff;
+  font-family: 'Poppins'
+}
