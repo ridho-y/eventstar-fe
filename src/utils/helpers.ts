@@ -53,10 +53,11 @@ export const uploadFiles = async (fileList: UploadFile2[]) => {
   const newlyUploadedFiles: string[] = [];
 
   const s3 = new S3({
-    region: process.env.REACT_APP_AWS_BUCKET_REGION,
+    region: process.env.REACT_APP_BUCKET_REGION,
+    endpoint: process.env.REACT_APP_BUCKET_ENDPOINT,
     credentials: {
-      accessKeyId: process.env.REACT_APP_AWS_BUCKET_ACCESS_KEY_ID,
-      secretAccessKey: process.env.REACT_APP_AWS_BUCKET_SECRET_ACCESS_KEY
+      accessKeyId: process.env.REACT_APP_BUCKET_ACCESS_KEY_ID,
+      secretAccessKey: process.env.REACT_APP_BUCKET_SECRET_ACCESS_KEY
     }
   });
 
