@@ -259,6 +259,11 @@ const Router: React.FC = () => {
                 <Route path="*" element={<Page404 />} />
               </Routes>
             </div>
+            <div className="fixed z-50 bottom-0 right-0 m-4 px-4 py-2 text-h4 md:text-h4-md border border-red-500 bg-red-100 text-red-800 text-sm rounded shadow-md">
+              <strong>Disclaimer:</strong> This is a mock website for
+              demonstration purposes only. Do not enter any real data or
+              personal information.
+            </div>
           </div>
         </Context.Provider>
       </BrowserRouter>
